@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>My Groceries - Smart Shopping List App | Free Download</title>
+    <meta name="title" content="My Groceries - Smart Shopping List App | Free Download">
+    <meta name="description" content="The ultimate free grocery shopping app. Create lists, find deals, save money & time. Download now for Android on Google Play and Aptoide.">
+    <meta name="keywords" content="grocery app, shopping list, grocery list, supermarket app, food shopping, save money, deals, coupons, barcode scanner, My Groceries">
+    <meta name="author" content="My Groceries Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mygroceriesapp.com/">
+    <meta property="og:title" content="My Groceries - Smart Shopping List App | Free Download">
+    <meta property="og:description" content="The ultimate free grocery shopping app. Create lists, find deals, save money & time. Download now for Android.">
+    <meta property="og:image" content="https://mygroceriesapp.com/images/social-banner.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mygroceriesapp.com/">
+    <meta property="twitter:title" content="My Groceries - Smart Shopping List App | Free Download">
+    <meta property="twitter:description" content="The ultimate free grocery shopping app. Create lists, find deals, save money & time. Download now for Android.">
+    <meta property="twitter:image" content="https://mygroceriesapp.com/images/social-banner.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "My Groceries",
+      "url": "https://mygroceriesapp.com",
+      "description": "Smart grocery shopping app that helps you organize lists and save money",
+      "applicationCategory": "ShoppingApplication",
+      "operatingSystem": "Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header remains the same as previous stylish version -->
+    <!-- Hero section remains the same -->
+    <!-- Features section remains the same -->
+    <!-- How it works remains the same -->
+    <!-- Testimonials remains the same -->
+    <!-- CTA section remains the same -->
+    <!-- Footer remains the same -->
+
+    <script src="script.js"></script>
+    
+    <!-- Google Analytics (replace with your ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
