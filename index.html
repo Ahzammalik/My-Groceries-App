@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Groceries - The smart shopping app that helps you organize your lists, find the best deals, and save time and money.">
     <title>My Groceries - Smart Shopping App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4313544696010088" crossorigin="anonymous"></script>
     <style>
         :root {
             --primary: #6CBF58;
@@ -29,6 +32,7 @@
             color: var(--dark);
             background-color: var(--light);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -64,6 +68,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
         .logo-icon {
@@ -139,6 +144,25 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--dark);
+        }
+
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 30px auto;
+            text-align: center;
+            padding: 15px;
+            background: rgba(108, 191, 88, 0.1);
+            border-radius: 10px;
+            max-width: 1200px;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 5px;
         }
 
         /* Hero Section */
@@ -277,26 +301,45 @@
 
         .floating-items {
             position: absolute;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
             animation: float 4s ease-in-out infinite;
             animation-delay: calc(var(--delay) * 1s);
+            z-index: 1;
         }
 
         .item-1 {
             top: 10%;
             left: 0;
             --delay: 0;
+            width: 90px;
+            height: 90px;
         }
 
         .item-2 {
             top: 30%;
             right: 0;
             --delay: 0.5;
+            width: 70px;
+            height: 70px;
         }
 
         .item-3 {
             bottom: 20%;
             left: 10%;
             --delay: 1;
+            width: 80px;
+            height: 80px;
+        }
+
+        .item-4 {
+            bottom: 10%;
+            right: 10%;
+            --delay: 1.5;
+            width: 60px;
+            height: 60px;
         }
 
         @keyframes float {
@@ -582,6 +625,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 20px;
+            text-decoration: none;
         }
 
         .footer-logo-icon {
@@ -628,6 +672,7 @@
             justify-content: center;
             color: white;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .social-link:hover {
@@ -743,6 +788,19 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .mobile-menu {
@@ -779,48 +837,63 @@
     <!-- Header -->
     <header id="header">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo">
+            <nav class="navbar" aria-label="Main navigation">
+                <a href="#" class="logo" aria-label="My Groceries - Home">
                     <div class="logo-icon">
-                        <i class="fas fa-shopping-basket"></i>
+                        <i class="fas fa-shopping-basket" aria-hidden="true"></i>
                     </div>
                     <div class="logo-text">My Groceries</div>
-                </div>
-                <div class="nav-links">
+                </a>
+                <div class="nav-links" id="navLinks">
                     <a href="#features">Features</a>
                     <a href="#how-it-works">How It Works</a>
                     <a href="#testimonials">Testimonials</a>
                     <a href="#download">Download</a>
                 </div>
                 <a href="#download" class="cta-button">Get the App</a>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
             </nav>
         </div>
     </header>
 
+    <!-- Ad Unit 1 - Below Header -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <!-- Ad 1 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4313544696010088"
+             data-ad-slot="8669403837"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="heroTitle">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Grocery Shopping Made Smart & Easy</h1>
+                    <h1 class="hero-title" id="heroTitle">Grocery Shopping Made Smart & Easy</h1>
                     <p class="hero-subtitle">Organize your shopping lists, find the best deals, and save time and money with My Groceries - the ultimate shopping companion.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="app-button play-store">
-                            <i class="fab fa-google-play"></i>
+                        <a href="https://play.google.com/store" class="app-button play-store" aria-label="Download on Google Play">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
                             <span>Google Play</span>
                         </a>
-                        <a href="#" class="app-button aptoide">
-                            <i class="fas fa-shopping-basket"></i>
+                        <a href="https://www.aptoide.com" class="app-button aptoide" aria-label="Download on Aptoide">
+                            <i class="fas fa-shopping-basket" aria-hidden="true"></i>
                             <span>Aptoide</span>
                         </a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
                             <div class="stat-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <div class="stat-number">100K+</div>
@@ -829,7 +902,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-icon">
-                                <i class="fas fa-store"></i>
+                                <i class="fas fa-store" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <div class="stat-number">5K+</div>
@@ -839,59 +912,60 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://via.placeholder.com/350x700" alt="My Groceries App" class="phone-mockup">
-                    <img src="https://via.placeholder.com/100x100" alt="Floating Item" class="floating-items item-1">
-                    <img src="https://via.placeholder.com/100x100" alt="Floating Item" class="floating-items item-2">
-                    <img src="https://via.placeholder.com/100x100" alt="Floating Item" class="floating-items item-3">
+                    <img src="https://via.placeholder.com/350x700/6CBF58/FFFFFF?text=My+Groceries+App" alt="My Groceries App on smartphone" class="phone-mockup">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2674/2674480.png" alt="Apple" class="floating-items item-1">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081985.png" alt="Milk" class="floating-items item-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3172/3172555.png" alt="Bread" class="floating-items item-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2329/2329866.png" alt="Vegetables" class="floating-items item-4">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="features" aria-labelledby="featuresTitle">
         <div class="container">
-            <h2 class="section-title">Amazing Features</h2>
+            <h2 class="section-title" id="featuresTitle">Amazing Features</h2>
             <p class="section-subtitle">Discover how My Groceries can transform your shopping experience</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-list-alt"></i>
+                        <i class="fas fa-list-alt" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Smart Lists</h3>
                     <p class="feature-desc">Create unlimited grocery lists organized by store or category with our intuitive interface.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-barcode" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Barcode Scanner</h3>
                     <p class="feature-desc">Scan products to add them to your list instantly or compare prices across stores.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-tags"></i>
+                        <i class="fas fa-tags" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Deals & Coupons</h3>
                     <p class="feature-desc">Find the best discounts and special offers from your favorite local stores.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+                        <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Store Navigation</h3>
                     <p class="feature-desc">Optimized aisle navigation helps you find items faster and shop more efficiently.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-bell"></i>
+                        <i class="fas fa-bell" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Smart Reminders</h3>
                     <p class="feature-desc">Never forget essential items with our intelligent reminder system based on your habits.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-users" aria-hidden="true"></i>
                     </div>
                     <h3 class="feature-title">Family Sharing</h3>
                     <p class="feature-desc">Share lists with family members in real-time and collaborate on shopping needs.</p>
@@ -901,9 +975,9 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works" id="how-it-works" aria-labelledby="howItWorksTitle">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
+            <h2 class="section-title" id="howItWorksTitle">How It Works</h2>
             <p class="section-subtitle">Get started in just 3 simple steps</p>
             <div class="steps-container">
                 <div class="step">
@@ -931,10 +1005,25 @@
         </div>
     </section>
 
+    <!-- Ad Unit 2 - Middle of Content -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <!-- Ad 2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4313544696010088"
+             data-ad-slot="8669403837"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonialsTitle">
         <div class="container">
-            <h2 class="section-title">What Users Say</h2>
+            <h2 class="section-title" id="testimonialsTitle">What Users Say</h2>
             <p class="section-subtitle">Join thousands of happy shoppers who transformed their grocery experience</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -971,19 +1060,34 @@
         </div>
     </section>
 
+    <!-- Ad Unit 3 - Before Footer -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <!-- Ad 3 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4313544696010088"
+             data-ad-slot="8669403837"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- CTA Section -->
-    <section class="cta-section" id="download">
+    <section class="cta-section" id="download" aria-labelledby="ctaTitle">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Transform Your Grocery Shopping?</h2>
+                <h2 class="cta-title" id="ctaTitle">Ready to Transform Your Grocery Shopping?</h2>
                 <p class="cta-subtitle">Download My Groceries now and start saving time and money on every shopping trip.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="app-button play-store">
-                        <i class="fab fa-google-play"></i>
+                    <a href="https://play.google.com/store" class="app-button play-store" aria-label="Download on Google Play">
+                        <i class="fab fa-google-play" aria-hidden="true"></i>
                         <span>Google Play</span>
                     </a>
-                    <a href="#" class="app-button aptoide">
-                        <i class="fas fa-shopping-basket"></i>
+                    <a href="https://www.aptoide.com" class="app-button aptoide" aria-label="Download on Aptoide">
+                        <i class="fas fa-shopping-basket" aria-hidden="true"></i>
                         <span>Aptoide</span>
                     </a>
                 </div>
@@ -996,18 +1100,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">
+                    <a href="#" class="footer-logo" aria-label="My Groceries - Home">
                         <div class="footer-logo-icon">
-                            <i class="fas fa-shopping-basket"></i>
+                            <i class="fas fa-shopping-basket" aria-hidden="true"></i>
                         </div>
                         <div class="footer-logo-text">My Groceries</div>
-                    </div>
+                    </a>
                     <p>The smart grocery shopping app that helps you organize your lists, find the best deals, and save time and money.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -1034,9 +1138,9 @@
                     <h3>Newsletter</h3>
                     <p>Subscribe to get updates on new features and special offers.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email" class="newsletter-input" required>
-                        <button type="submit" class="newsletter-button">
-                            <i class="fas fa-paper-plane"></i>
+                        <input type="email" placeholder="Your Email" class="newsletter-input" required aria-label="Your email address">
+                        <button type="submit" class="newsletter-button" aria-label="Subscribe">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </button>
                     </form>
                 </div>
@@ -1059,11 +1163,21 @@
         });
 
         // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
         
         mobileMenu.addEventListener('click', function() {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+            });
         });
 
         // Smooth scrolling for anchor links
@@ -1084,9 +1198,11 @@
                         behavior: 'smooth'
                     });
 
-                    // Close mobile menu if open
-                    if (navLinks.style.display === 'flex') {
-                        navLinks.style.display = 'none';
+                    // Update URL without jumping
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
                     }
                 }
             });
